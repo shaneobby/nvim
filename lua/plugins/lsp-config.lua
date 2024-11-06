@@ -18,7 +18,13 @@ return{
     config = function()
       local lspconfig = require("lspconfig")
       lspconfig.lua_ls.setup({})
+
+      vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
+      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
+      vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
+      vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, {})
+      vim.keymap.set('n', ']d', vim.diagnostic.goto_next, {})
+      vim.keymap.set('n', '<C-w>d', vim.diagnostic.open_float, {})
     end
   }
 }
-
