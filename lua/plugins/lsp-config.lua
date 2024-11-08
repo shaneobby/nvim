@@ -1,17 +1,17 @@
-return{
+return {
   {
     "williamboman/mason.nvim",
     config = function()
       require("mason").setup()
-    end
+    end,
   },
   {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls"}
+        automatic_installation = true,
       })
-    end
+    end,
   },
   {
     "neovim/nvim-lspconfig",
@@ -23,17 +23,17 @@ return{
           icons = {
             server_installed = "✓",
             server_pending = "➜",
-            server_uninstalled = "✗"
-          }
-        }
+            server_uninstalled = "✗",
+          },
+        },
       })
 
-      vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
-      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
-      vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
-      vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, {})
-      vim.keymap.set('n', ']d', vim.diagnostic.goto_next, {})
-      vim.keymap.set('n', '<C-w>d', vim.diagnostic.open_float, {})
-    end
-  }
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+      vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+      vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, {})
+      vim.keymap.set("n", "]d", vim.diagnostic.goto_next, {})
+      vim.keymap.set("n", "<C-w>d", vim.diagnostic.open_float, {})
+    end,
+  },
 }
