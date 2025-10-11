@@ -58,5 +58,21 @@ return {
       auto_update = true,
       run_on_start = true,
     },
-  }, 
+  },
+  {
+    'saghen/blink.cmp',
+    dependencies = { 'rafamadriz/friendly-snippets' },
+
+    version = '1.*',
+
+    opts = {
+      keymap = { preset = 'default' },
+
+      appearance = {
+        nerd_font_variant = 'mono'},
+
+      completion = { documentation = { auto_show = false } },
+
+    } 
+  }
 }
